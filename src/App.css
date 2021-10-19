@@ -11,6 +11,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .navbar-wrapper a {
+    padding-left: 30px ;
+  }
 }
 
 .App-header {
@@ -22,6 +25,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.update {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .App-link {
