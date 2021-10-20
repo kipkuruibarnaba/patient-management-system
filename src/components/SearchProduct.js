@@ -17,11 +17,14 @@ function SearchProduct() {
   return (
     <div>
       <Header />
-      <div className="col-md-8 offset-sm-2">
-        <h1>Search Product</h1>
-        <input type="text" onChange={(e)=>search(e.target.value)} className="form-control" placeholder="Search Product"/>
-        <br></br>
-        <Table striped bordered hover>
+      <div className="col-md-8 offset-sm-2 mt-2">
+      <div className="card">
+            <div className="card-header">
+            <h4>Search Product</h4>
+            </div>
+            <input type="text" onChange={(e)=>search(e.target.value)} className="form-control mt-4 ml-4 col-md-6" placeholder="Search Product"/>
+            <div className="card-body">
+              <Table striped bordered hover>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -45,6 +48,8 @@ function SearchProduct() {
                         }
                     </tbody>
                 </Table>
+            </div>
+       </div>
       </div>
     </div>
   )

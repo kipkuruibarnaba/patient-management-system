@@ -40,42 +40,49 @@ function ProductList() {
     return (
         <div>
             <Header />
-            <div className="col-md-8 offset-sm-2">
-                <h1>Product List</h1>
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Product Description</th>
-                            <th>Price</th>
-                            <th>Image</th>
-                            <th>Update</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            data.map((item) =>
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.price}</td>
-                                    <td><img style={{ width: 60 }} src={"http://127.0.0.1/laravel-student-api/" + item.file_path}></img></td>
-                                    <td>
-                                      <Link to ={"update/"+item.id }>
-                                       <button className="update">Update</button>
-                                      </Link>
-                                    </td>       
-                                    <td>
-                                        <button onClick={()=>deleteOperation(item.id)} className="Delete btn btn-danger">Delete</button>
-                                    </td>                                                             
-                                </tr>
-                            )
-                        }
-                    </tbody>
-                </Table>
+            <div className="col-md-8 offset-sm-2 mt-2">
+
+            <div className="card">
+                <div className="card-header">
+                <h3>Product List</h3>
+                </div>
+                <div className="card-body">
+                    <Table striped bordered hover size="sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Product Description</th>
+                                <th>Price</th>
+                                <th>Image</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.map((item) =>
+                                    <tr key={item.id}>
+                                        <td>{item.id}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.description}</td>
+                                        <td>{item.price}</td>
+                                        <td><img style={{ width: 60 }} src={"http://127.0.0.1/laravel-student-api/" + item.file_path}></img></td>
+                                        <td>
+                                        <Link to ={"update/"+item.id }>
+                                        <button className="update">Update</button>
+                                        </Link>
+                                        </td>       
+                                        <td>
+                                            <button onClick={()=>deleteOperation(item.id)} className="Delete btn btn-danger">Delete</button>
+                                        </td>                                                             
+                                    </tr>
+                                )
+                            }
+                        </tbody>
+                    </Table>
+                </div>
+            </div>
             </div>
         </div>
     );

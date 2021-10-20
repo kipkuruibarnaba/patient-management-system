@@ -24,17 +24,24 @@ function AddProduct() {
   return (
     <div>
       <Header />
-      <div className="col-md-8 offset-sm-2">
-        <h1>Add Product</h1>
-        <input type="text" onChange={(e)=>setName(e.target.value)} placeholder="Enter Product Name" className="form-control" />
-        <br />
-        <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Enter Product Price" className="form-control" />
-        <br />
-        <textarea  type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Enter Product Description" className="form-control" />
-        <br />
-        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control" />
-        <br />
-        <button onClick={addproduct} className="btn btn-info">Add Product</button>
+      <div className="col-md-8 offset-sm-2 mt-2">
+
+      <div className="card">
+              <div className="card-header">
+              <h4>Add Product</h4>
+              </div>
+              <div className="card-body">
+                <input type="text" onChange={(e)=>setName(e.target.value)} placeholder="Enter Product Name" className="form-control" />
+                <br />
+                <input type="number" onChange={(e) => setPrice(e.target.value)} placeholder="Enter Product Price" className="form-control" />
+                <br />
+                <textarea  type="text" onChange={(e) => setDescription(e.target.value)} placeholder="Enter Product Description" className="form-control" />
+                <br />
+                <input type="file" onChange={(e) => setFile(e.target.files[0])} className="form-control" />
+                <br />
+                <button onClick={addproduct} className="btn btn-info">Add Product</button>
+              </div>
+           </div>
       </div>
     </div>
   )

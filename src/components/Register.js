@@ -36,15 +36,22 @@ function Register() {
     return (
         <div>
             <Header />
-            <div className="col-md-10 offset-sm-2">
-            <h1>Register</h1>
-            <input type="text" value={name} onChange={(e)=>SetName(e.target.value)} className="form-control" placeholder="Enter Name" />
-            <br/>
-            <input type="email" value={email} onChange={(e)=>SetEmail(e.target.value)} className="form-control" placeholder="Enter Email" />
-            <br/>
-            <input type="password" value={password} onChange={(e)=>SetPassword(e.target.value)} className="form-control" placeholder="Enter Password" />
-            <br/>
-            <button onClick={SignUp} className="btn btn-primary">Register</button>
+
+            <div className="col-md-6 offset-sm-2 mt-2">
+                <div className="card">
+                    <div className="card-header">
+                    <h4>Register</h4>
+                    </div>
+                    <div className="card-body">
+                       <input type="text" value={name} onChange={(e)=>SetName(e.target.value)} className="form-control" placeholder="Enter Name" />
+                        <br/>
+                        <input type="email" value={email} onChange={(e)=>SetEmail(e.target.value)} className="form-control" placeholder="Enter Email" />
+                        <br/>
+                        <input type="password" value={password} onChange={(e)=>SetPassword(e.target.value)} className="form-control" placeholder="Enter Password" />
+                        <br/>
+                        <button onClick={SignUp} className="btn btn-primary">Register</button>
+                    </div>
+                </div>
             </div>
         </div>
 )

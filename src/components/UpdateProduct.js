@@ -39,41 +39,47 @@ function UpdateProduct(props) {
   return (
     <div>
       <Header />
-      <div className="col-md-10 offset-sm-2">
-        <h1>Update Product</h1>
-        <input
-          type="text"
-          onChange={(e)=>setName(e.target.value)}
-          defaultValue={data.name}
-          className="form-control"
-        />
-        <br />
-        <input
-          type="text"
-          onChange={(e)=>setDescription(e.target.value)}
-          defaultValue={data.description}
-          className="form-control"
-        />
-                 <br></br>
-                 <br></br>
-        <input
-          type="number"
-          onChange={(e)=>setPrice(e.target.value)}
-          defaultValue={data.price}
-          className="form-control"
-        />
-         <br></br>
-         <br></br>
-        <input type="file"
-        onChange={(e)=>setFile(e.target.files[0])}
-        defaultValue={data.file_path}
-         className="form-control" />
-         <br></br>
-         <br></br>
-        <img style={{width:80}} src={"http://127.0.0.1/laravel-student-api/"+data.file_path}/>
-        <br></br>
-        <br></br>
-        <button onClick={()=>editProduct(data.id)} className="btn btn-info">Update Product</button>
+      <div className="col-md-8 offset-sm-2 mt-2">
+          <div className="card">
+               <div className="card-header">
+                  <h4>Update Product</h4>
+                </div>
+                  <div className="card-body">
+                  <input
+                  type="text"
+                  onChange={(e)=>setName(e.target.value)}
+                  defaultValue={data.name}
+                  className="form-control"
+                />
+                <br />
+                <input
+                  type="text"
+                  onChange={(e)=>setDescription(e.target.value)}
+                  defaultValue={data.description}
+                  className="form-control"
+                />
+                        <br></br>
+                        <br></br>
+                <input
+                  type="number"
+                  onChange={(e)=>setPrice(e.target.value)}
+                  defaultValue={data.price}
+                  className="form-control"
+                />
+                <br></br>
+                <br></br>
+                <input type="file"
+                onChange={(e)=>setFile(e.target.files[0])}
+                defaultValue={data.file_path}
+                className="form-control" />
+                <br></br>
+                <br></br>
+                <img style={{width:80}} src={"http://127.0.0.1/laravel-student-api/"+data.file_path}/>
+                <br></br>
+                <br></br>
+                <button onClick={()=>editProduct(data.id)} className="btn btn-info">Update Product</button>
+                  </div>
+            </div>
       </div>
     </div>
   );
