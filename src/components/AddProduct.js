@@ -1,6 +1,10 @@
 import Header from './Header';
 import { useState } from 'react';
 function AddProduct() {
+
+  // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -14,12 +18,11 @@ function AddProduct() {
     formData.append('description', description);
     formData.append('file', file);
    
-   let result = await fetch("http://127.0.0.1/laravel-student-api/api/addproduct", {
+   let result = await fetch(baseUrl +"api/addproduct", {
      method: "POST",
      body: formData
    });
    alert("Data has been saved");
-
   }
   return (
     <div>

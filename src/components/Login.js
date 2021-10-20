@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import Header from "./Header";
 
 function Login() {
+    // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+    const baseUrl ="https://react-ecomm-front.herokuapp.com/";
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -16,7 +18,7 @@ function Login() {
     async function login() {
         let item = { email, password }
         console.log(item)
-        let result = await fetch("http://127.0.0.1/laravel-student-api/api/login", {
+        let result = await fetch(baseUrl +"api/login", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

@@ -5,7 +5,8 @@ import Header from './Header';
 
 
 function Register() {
-
+    // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+    const baseUrl ="https://react-ecomm-front.herokuapp.com/";
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
             history.push("/add") 
@@ -19,7 +20,7 @@ function Register() {
      async function SignUp() {
         let item = { name, email, password }
         console.log(item)
-         let result = await fetch("http://127.0.0.1/laravel-student-api/api/register", {
+         let result = await fetch(baseUrl +"api/register", {
             method: 'POST',
             body  : JSON.stringify(item),
             headers: {

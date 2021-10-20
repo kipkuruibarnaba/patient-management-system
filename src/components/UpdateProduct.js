@@ -3,6 +3,8 @@ import {withRouter} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 function UpdateProduct(props) {
+  // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -10,7 +12,7 @@ function UpdateProduct(props) {
   const [data, setData] =useState([]);
 
   useEffect(async()=>{
-    let result = await fetch("http://127.0.0.1/laravel-student-api/api/product/"+props.match.params.id);
+    let result = await fetch(baseUrl +"api/product/"+props.match.params.id);
     result =await result.json();
     setData(result)
     setName(result.name);
@@ -27,7 +29,7 @@ function UpdateProduct(props) {
     formData.append('price', price);
     formData.append('file', file);
   
-  let result = await fetch("http://127.0.0.1/laravel-student-api/api/update/"+id+"?_method=PUT", {
+  let result = await fetch(baseUrl +"api/update/"+id+"?_method=PUT", {
     method: "POST",
     body: formData
   });
@@ -74,7 +76,7 @@ function UpdateProduct(props) {
                 className="form-control" />
                 <br></br>
                 <br></br>
-                <img style={{width:80}} src={"http://127.0.0.1/laravel-student-api/"+data.file_path}/>
+                <img style={{width:80}} src={baseUrl +data.file_path}/>
                 <br></br>
                 <br></br>
                 <button onClick={()=>editProduct(data.id)} className="btn btn-info">Update Product</button>

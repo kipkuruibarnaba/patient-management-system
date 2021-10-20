@@ -3,12 +3,13 @@ import { useState } from 'react';
 import {Table} from 'react-bootstrap';
 
 function SearchProduct() {
-
+  // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
   const [data, setData] = useState([]);
 
  async function search(key){
     console.log(key)
-    let result = await fetch("http://127.0.0.1/laravel-student-api/api/search/"+key);
+    let result = await fetch(baseUrl +"api/search/"+key);
     result = await result.json();
     console.log(result)
     setData(result);
@@ -42,7 +43,7 @@ function SearchProduct() {
                                     <td>{item.name}</td>
                                     <td>{item.description}</td>
                                     <td>{item.price}</td>
-                                    <td><img style={{ width: 60 }} src={"http://127.0.0.1/ecomm-backend/" + item.file_path}></img></td>                                                            
+                                    <td><img style={{ width: 60 }} src={baseUrl + item.file_path}></img></td>                                                            
                                 </tr>
                             )
                         }

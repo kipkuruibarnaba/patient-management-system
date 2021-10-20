@@ -4,6 +4,8 @@ import {Table} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 function ProductList() {
+    // const baseUrl = 'http://127.0.0.1/laravel-student-api/';
+    const baseUrl ="https://react-ecomm-front.herokuapp.com/";
     const [data, setData] = useState([]);
     useEffect( () => {
         // let result = await fetch("http://127.0.0.1/ecomm-backend/api/listproducts");
@@ -15,7 +17,7 @@ function ProductList() {
     console.log("result", data);
 
     async function deleteOperation(id) {
-        let result = await fetch("http://127.0.0.1/laravel-student-api/api/delete/" + id, {
+        let result = await fetch(baseUrl +"api/delete/" + id, {
             method:"DELETE"
         });
         result = await result.json();
@@ -24,7 +26,7 @@ function ProductList() {
     }
 
     async function updateOperation(id) {
-        let result = await fetch("http://127.0.0.1/laravel-student-api/api/delete/" + id, {
+        let result = await fetch(baseUrl +"api/delete/" + id, {
             method:"DELETE"
         });
         result = await result.json();
@@ -33,7 +35,7 @@ function ProductList() {
     }
 
    async function getData() {
-        let result = await fetch("http://127.0.0.1/laravel-student-api/api/listproducts");
+        let result = await fetch(baseUrl +"api/listproducts");
         result = await result.json();
         setData(result);
     }
@@ -67,7 +69,7 @@ function ProductList() {
                                         <td>{item.name}</td>
                                         <td>{item.description}</td>
                                         <td>{item.price}</td>
-                                        <td><img style={{ width: 60 }} src={"http://127.0.0.1/laravel-student-api/" + item.file_path}></img></td>
+                                        <td><img style={{ width: 60 }} src={baseUrl  + item.file_path}></img></td>
                                         <td>
                                         <Link to ={"update/"+item.id }>
                                         <button className="update">Update</button>
