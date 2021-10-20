@@ -4,7 +4,7 @@ import {Table} from 'react-bootstrap';
 
 function SearchProduct() {
   // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
+  const baseUrl ="https://laravel-student-api.herokuapp.com/";
   const [data, setData] = useState([]);
 
  async function search(key){

@@ -6,7 +6,7 @@ import Header from './Header';
 
 function Register() {
     // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-    const baseUrl ="https://react-ecomm-front.herokuapp.com/";
+    const baseUrl ="https://laravel-student-api.herokuapp.com/";
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
             history.push("/add") 

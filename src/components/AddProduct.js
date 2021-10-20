@@ -3,7 +3,7 @@ import { useState } from 'react';
 function AddProduct() {
 
   // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
+  const baseUrl ="https://laravel-student-api.herokuapp.com/";
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");

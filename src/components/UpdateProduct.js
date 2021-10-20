@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 function UpdateProduct(props) {
   // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-  const baseUrl ="https://react-ecomm-front.herokuapp.com/";
+  const baseUrl ="https://laravel-student-api.herokuapp.com/";
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
