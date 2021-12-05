@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 
 function PatientList() {
-    // const baseUrl = 'http://localhost/laravel-patient-api/';
-    const baseUrl ="https://laravel-patients-api.herokuapp.com/";
+    const baseUrl = 'http://localhost/laravel-patient-api/';
+    // const baseUrl ="https://laravel-patients-api.herokuapp.com/";
     const [data, setData] = useState([]);
     const [statistics, setStatistics] = useState([]);
     useEffect( () => {
@@ -133,12 +133,13 @@ function PatientList() {
                                         <td>{findAge(item.dateofbirth)}</td>
                                         <td>{item.gender}</td>
                                         <td>
-                                        <Link to ={"update/"+item.id }>
+                                        {/* <Link to ={"update/"+item.id }> */}
                                         <button className="update">Update</button>
-                                        </Link>
+                                        {/* </Link> */}
                                         </td>       
                                         <td>
-                                            <button onClick={()=>deleteOperation(item.id)} className="Delete btn btn-danger">Delete</button>
+                                        <button className="Delete btn btn-danger">Delete</button>
+                                            {/* <button onClick={()=>deleteOperation(item.id)} className="Delete btn btn-danger">Delete</button> */}
                                         </td>                                                             
                                     </tr>
                                 )

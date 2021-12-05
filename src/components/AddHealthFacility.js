@@ -4,8 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 
 function AddHealthFacility() {
     const history = useHistory();
-//   const baseUrl ="http://localhost/laravel-patient-api/";
-  const baseUrl ="https://laravel-patients-api.herokuapp.com/";
+  const baseUrl ="http://localhost/laravel-patient-api/";
+//   const baseUrl ="https://laravel-patients-api.herokuapp.com/";
 
     const [facility, setFacility] = useState({
         facilityName: "",
