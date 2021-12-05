@@ -9,7 +9,7 @@ function Register() {
     const baseUrl ="https://laravel-patients-api.herokuapp.com/";
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
-            history.push("/add") 
+            history.push("/add-facility") 
         }
     },[])
     const [name, SetName] = useState("")

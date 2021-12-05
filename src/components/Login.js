@@ -11,7 +11,7 @@ function Login() {
     const history = useHistory();
     useEffect(() => {
         if (localStorage.getItem("user-info")) {
-            history.push("/list");
+            history.push("/add-facility");
         }
     }, []);
   

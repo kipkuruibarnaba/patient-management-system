@@ -30,7 +30,7 @@ function AddHealthFacility() {
             facilityCounty: ""
         })
         alert("Facility Added Successfully");
-        history.push('/list')
+        history.push('/list-facilities')
     }
 
     function handleChange(event) {
