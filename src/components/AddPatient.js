@@ -3,8 +3,8 @@ import { useState,useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 function AddPatient() {
     const history = useHistory();
-//   const baseUrl ="http://127.0.0.1/laravel-patient-api/";
-  const baseUrl ="https://laravel-patients-api.herokuapp.com/";
+  const baseUrl ="http://127.0.0.1/laravel-patient-api/";
+//   const baseUrl ="https://laravel-patients-api.herokuapp.com/";
 
     const [patient, setPatient] = useState({
         facilityName: "",
@@ -77,12 +77,11 @@ function AddPatient() {
                               {
                                facility.map((itemoption)=>
                                <option value={itemoption.facilityname} key={itemoption.id}>{itemoption.facilityname}</option>
-                            //    <option value={`${itemoption.id}||${itemoption.facilityname}`} key={itemoption.id}>{itemoption.facilityname}</option>
+    
                                ) 
                               }
                           </select>
                       </div>
-                      {/* itemoption.facilityname */}
                       <div className="form-group mb-3">
                           <label>Patient First Name</label>
                           <input type="text" onChange={handleChange} value={patient.firstName} name="firstName" placeholder="Enter Patient First Name" className="form-control" />
@@ -119,3 +118,4 @@ export default AddPatient;
 
 
 
+             //    <option value={`${itemoption.id}||${itemoption.facilityname}`} key={itemoption.id}>{itemoption.facilityname}</option>
