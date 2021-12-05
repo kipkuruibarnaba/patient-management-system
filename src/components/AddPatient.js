@@ -14,6 +14,7 @@ function AddPatient() {
         dateofbirth: ""
     });
     const [facility, setFacility] = useState([]);
+
     useEffect( () => {
         getFacilities()
     }, [
@@ -42,7 +43,7 @@ function AddPatient() {
      method: "POST",
      body: formData
    });
-   result = await result.json();
+//    result = await result.json();
 //    result = JSON.stringify(result)
 //    alert(result);
    alert("Patient has been added successfully");
