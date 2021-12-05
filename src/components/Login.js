@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 import Header from "./Header";
 
 function Login() {
-    // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-    const baseUrl ="https://laravel-student-api.herokuapp.com/";
+    const baseUrl ="http://127.0.0.1/laravel-patient-api/";
+    // const baseUrl ="https://laravel-student-api.herokuapp.com/";
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -29,7 +29,7 @@ function Login() {
         result = await result.json()
         //  console.log("result", result)
         localStorage.setItem('user-info', JSON.stringify(result))
-        history.push("/list")
+        history.push("/list-patients")
     }
     return (
         <div>

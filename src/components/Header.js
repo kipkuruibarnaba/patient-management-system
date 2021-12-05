@@ -11,14 +11,16 @@ function Header() {
     return (
         <div>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">E-Comm</Navbar.Brand>
+                <Navbar.Brand href="#home">PMS</Navbar.Brand>
                 <Nav className="mr-auto navbar-wrapper">
                     {
                         localStorage.getItem('user-info') ?
                             <>
-                                <Link to="/add" >Add Product</Link>
-                                <Link to="/list" >List Product</Link>
-                                <Link to="/search" >Search Product</Link>
+                                <Link to="/add-facility" >Add Health Facility</Link>
+                                <Link to="/add-patient" >Add Patient</Link>
+                                <Link to="/list-facilities" >List Facilities</Link>
+                                <Link to="/list-patients" >List Patients</Link>
+                                <Link to="/search" >Search Patients</Link>
                             </>
                             :
                             <>

@@ -3,18 +3,26 @@ import React, { useState, useEffect } from 'react';
 import {Table} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-function ProductList() {
-    // const baseUrl = 'http://127.0.0.1/laravel-student-api/';
-    const baseUrl ="https://laravel-student-api.herokuapp.com/";
+
+function FacilitiesList() {
+    const baseUrl = 'http://localhost/laravel-patient-api/';
+    // const baseUrl ="https://laravel-student-api.herokuapp.com/";
     const [data, setData] = useState([]);
     useEffect( () => {
-        // let result = await fetch("http://127.0.0.1/ecomm-backend/api/listproducts");
-        //  result = await result.json();
-        // setData(result);
         getData()
     }, [
     ])
-    console.log("result", data);
+    // console.log("result", data);
+    
+    function findAge(dateofbirth){
+        const currentdate = new Date();
+        const birthdate = new Date(dateofbirth);
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+        const date1 = Date.UTC(currentdate.getFullYear(), currentdate.getMonth(), currentdate.getDate());
+        const date2 = Date.UTC(birthdate.getFullYear(), birthdate.getMonth(), birthdate.getDate());
+        const age = Math.floor(((date1 - date2) / _MS_PER_DAY)/365);
+        return age;
+    }
 
     async function deleteOperation(id) {
         let result = await fetch(baseUrl +"api/delete/" + id, {
@@ -30,14 +38,19 @@ function ProductList() {
             method:"DELETE"
         });
         result = await result.json();
-        console.log(result)
+        // console.log(result)
         getData()
     }
 
-   async function getData() {
-        let result = await fetch(baseUrl +"api/listproducts");
-        result = await result.json();
-        setData(result);
+    async function getData() {
+        await fetch(baseUrl +"api/listfacilities")
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
     return (
         <div>
@@ -46,18 +59,17 @@ function ProductList() {
 
             <div className="card">
                 <div className="card-header">
-                <h3>Product List</h3>
+                <h3>Patient List</h3>
                 </div>
                 <div className="card-body">
-                    <Table striped bordered hover size="sm">
+                    <table className="table table-bordered table-sm table-responsive">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Product Description</th>
-                                <th>Price</th>
-                                <th>Image</th>
-                                <th>Update</th>
+                                <th>Facility Name</th>
+                                <th>Facility County</th>
+                                <th>Facility Location</th>
+                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -66,10 +78,9 @@ function ProductList() {
                                 data.map((item) =>
                                     <tr key={item.id}>
                                         <td>{item.id}</td>
-                                        <td>{item.name}</td>
-                                        <td>{item.description}</td>
-                                        <td>{item.price}</td>
-                                        <td><img style={{ width: 60 }} src={baseUrl  + item.file_path}></img></td>
+                                        <td>{item.facilityname}</td>
+                                        <td>{item.facilitycounty}</td>
+                                        <td>{item.facilitylocation}</td>
                                         <td>
                                         <Link to ={"update/"+item.id }>
                                         <button className="update">Update</button>
@@ -82,7 +93,7 @@ function ProductList() {
                                 )
                             }
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
             </div>
             </div>
@@ -90,4 +101,4 @@ function ProductList() {
     );
 }
 
-export default ProductList;
+export default FacilitiesList;

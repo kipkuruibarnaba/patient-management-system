@@ -1,10 +1,10 @@
-import Header from "./Header";
 import {withRouter} from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import Header from "./Header";
 
-function UpdateProduct(props) {
-  // const baseUrl ="http://127.0.0.1/laravel-student-api/";
-  const baseUrl ="https://laravel-student-api.herokuapp.com/";
+function UpdatePatient(props) {
+  const baseUrl ="http://127.0.0.1/laravel-student-api/";
+  // const baseUrl ="https://laravel-student-api.herokuapp.com/";
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -87,4 +87,4 @@ function UpdateProduct(props) {
   );
 }
 
-export default withRouter(UpdateProduct);
+export default withRouter(UpdatePatient);

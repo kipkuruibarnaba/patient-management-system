@@ -1,15 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import { BrowserRouter, Route,Switch} from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login';
 import Register from './components/Register';
-import UpdateProduct from './components/UpdateProduct';
-import AddProduct from './components/AddProduct';
-import ProductList from './components/ProductList';
+import UpdateProduct from './components/UpdatePatient';
+import AddHealthFacility from './components/AddHealthFacility';
+import AddPatient from './components/AddPatient';
+import PatientList from './components/PatientList';
+import FacilitiesList from './components/FacilitiesList';
 import Protected from './components/Protected';
-import SearchProduct from './components/SearchProduct';
+import SearchPatient from './components/SearchPatient';
 
 function App() {
   return (
@@ -18,7 +19,6 @@ function App() {
         <Switch>
         <Route exact path="/">
         <Protected Cmp={Header} />
-          {/* <Header /> */}
         </Route>
         <Route path="/login">
           <Login />
@@ -26,21 +26,23 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <Route path="/add">
-          <Protected Cmp={AddProduct} />
-          {/* <AddProduct/> */}
+        <Route path="/add-facility">
+          <Protected Cmp={AddHealthFacility} />
         </Route>
+          <Route path="/add-patient">
+            <Protected Cmp={AddPatient} />
+          </Route>
         <Route path="/update/:id">
           <Protected Cmp={UpdateProduct} />
-          {/* <UpdateProduct/> */}
         </Route>
         <Route path="/search">
-          <Protected Cmp={SearchProduct} />
-          {/* <SearchProduct/> */}
-        </Route>       
-        <Route path="/list">
-          <Protected Cmp={ProductList} />
-          {/* <ListProduct/> */}
+          <Protected Cmp={SearchPatient} />
+        </Route> 
+        <Route path="/list-patients">
+          <Protected Cmp={PatientList} />
+          </Route>      
+        <Route path="/list-facilities">
+          <Protected Cmp={FacilitiesList} />
           </Route>
         </Switch>
       </BrowserRouter>
