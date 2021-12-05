@@ -28,7 +28,7 @@ function AddPatient() {
                 console.log(err);
             });
     }
-    console.log(facility)
+    // console.log(facility)
  async function handleSubmit(event) {
     event.preventDefault();
      const formData = new FormData();
@@ -43,7 +43,7 @@ function AddPatient() {
      body: formData
    });
    result = await result.json();
-   result = JSON.stringify(result)
+//    result = JSON.stringify(result)
 //    alert(result);
    alert("Patient has been added successfully");
    history.push('/list-patients')
