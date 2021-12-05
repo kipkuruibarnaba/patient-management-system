@@ -76,7 +76,7 @@ function AddPatient() {
                               <option>Select Health Facility</option>
                               {
                                facility.map((itemoption)=>
-                               <option value={`${itemoption.facilityname}`} key={itemoption.id}>{itemoption.facilityname}</option>
+                               <option value={itemoption.facilityname} key={itemoption.id}>{itemoption.facilityname}</option>
                             //    <option value={`${itemoption.id}||${itemoption.facilityname}`} key={itemoption.id}>{itemoption.facilityname}</option>
                                ) 
                               }
