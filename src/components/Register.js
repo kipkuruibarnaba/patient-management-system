@@ -5,8 +5,8 @@ import Header from './Header';
 
 
 function Register() {
-    const baseUrl ="http://127.0.0.1/laravel-patient-api/";
-    // const baseUrl ="https://laravel-student-api.herokuapp.com/";
+    // const baseUrl ="http://127.0.0.1/laravel-patient-api/";
+    const baseUrl ="https://laravel-patients-api.herokuapp.com/";
     useEffect(() => {
         if (localStorage.getItem('user-info')) {
             history.push("/add") 

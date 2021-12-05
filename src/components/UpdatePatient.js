@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Header from "./Header";
 
 function UpdatePatient(props) {
-  const baseUrl ="http://127.0.0.1/laravel-student-api/";
-  // const baseUrl ="https://laravel-student-api.herokuapp.com/";
+  // const baseUrl ="http://127.0.0.1/laravel-student-api/";
+  const baseUrl ="https://laravel-patients-api.herokuapp.com/";
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
