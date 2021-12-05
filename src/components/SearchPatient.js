@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 
 function SearchPatient() {
-  const baseUrl ="http://127.0.0.1/laravel-patient-api/";
-  // const baseUrl ="https://laravel-patients-api.herokuapp.com/";
+  // const baseUrl ="http://127.0.0.1/laravel-patient-api/";
+  const baseUrl ="https://laravel-patients-api.herokuapp.com/";
   const [data, setData] = useState([]);
 
  async function search(key){

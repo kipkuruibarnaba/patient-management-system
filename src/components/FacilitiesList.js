@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 
 function FacilitiesList() {
-    const baseUrl = 'http://localhost/laravel-patient-api/';
-    // const baseUrl ="https://laravel-patients-api.herokuapp.com/";
+    // const baseUrl = 'http://localhost/laravel-patient-api/';
+    const baseUrl ="https://laravel-patients-api.herokuapp.com/";
     const [data, setData] = useState([]);
     useEffect( () => {
         getData()
