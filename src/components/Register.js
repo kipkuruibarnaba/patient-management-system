@@ -31,7 +31,7 @@ function Register() {
          result = await result.json()
         //  console.log("result", result)
          localStorage.setItem('user-info', JSON.stringify(result))
-         history.push("/add")
+         history.push("/add-facility")
     }
 
     return (
